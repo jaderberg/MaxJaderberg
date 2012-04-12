@@ -1,8 +1,21 @@
 html {
-	background: url(../img/dark_wood.png) repeat center center fixed;
+	background: url(../img/dark_wood.png) repeat center center scroll;
+    height: 100%; width: 100%;
 }
 
-img.bg, canvas.bg {
+body {
+    padding: 0; margin: 0;
+    height: 100%; width: 100%;
+    font-family: 'LeagueGothicRegular', sans-serif;
+}
+
+div {
+    padding: 0; margin: 0;
+    display: block;
+    z-index: 0;
+}
+
+img.bg, canvas.bg{
 	/* Set rules to fill background */
 	min-height: 100%;
 	min-width: 1024px;
@@ -17,7 +30,7 @@ img.bg, canvas.bg {
 	left: 0;
     z-index: -10;
 
-    opacity: 0.6;
+    opacity: 0.3;
 }
 
 @media screen and (max-width: 1024px) { /* Specific to this particular image */
@@ -25,4 +38,75 @@ img.bg, canvas.bg {
 		left: 50%;
 		margin-left: -512px;   /* 50% */
 	}
+}
+
+a{
+    text-decoration: none;
+}
+
+.header{
+    margin-top: 40px;
+    background: url(../img/leather_1.png) repeat;
+    opacity: 0.8;
+    -moz-box-shadow:    0px 0px 10px 5px #000;
+    -webkit-box-shadow: 0px 0px 10px 5px #000;
+    box-shadow:         0px 0px 10px 5px #000;
+}
+
+h1 {
+        margin: 0;
+        padding: 20px 0 10px 0;
+        font-size: 100px;
+        color: #000;
+        text-align: center;
+        text-transform: uppercase;
+        text-shadow: -1px -1px #444;
+        transition: color 0.218s;
+        -moz-transition: color 0.218s; /* Firefox 4 */
+        -webkit-transition: color 0.218s; /* Safari and Chrome */
+        -o-transition: color 0.218s; /* Opera */
+
+}
+
+h1:hover {
+    color: #333;
+    transition: color 0.218s;
+    -moz-transition: color 0.218s; /* Firefox 4 */
+    -webkit-transition: color 0.218s; /* Safari and Chrome */
+    -o-transition: color 0.218s; /* Opera */
+}
+
+#ig-photo-strip{
+    width: 120px;
+    height: 100%;
+    position: fixed;
+    top: 0; left: 0;
+    background-color: #000000;
+    -moz-box-shadow:    0px 0px 5px 2px #000;
+    -webkit-box-shadow: 0px 0px 5px 2px #000;
+    box-shadow:         0px 0px 5px 2px #000;
+}
+
+#ig-photo-strip p{
+    color: #fff;
+    font-size: 30px;
+    margin: 10px 10px 10px 10px;
+    text-align: center;
+}
+
+ul{
+    list-style: none;
+    margin: 0; padding: 0;
+}
+
+li.ig-photo-holder{
+    margin: 15px 0 15px 30px;
+    text-decoration: none;
+    color: white;
+}
+
+.ig-photo{
+    width: 60px;
+    height: 60px;
+    margin: auto;
 }
