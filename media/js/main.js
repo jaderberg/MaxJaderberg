@@ -21,8 +21,12 @@ $(function () {
                 $bgimg.pixastic('blurfast', options);
                 $thisCanvas = $(options.resultCanvas);
                 $prevCanvas = $('canvas.bgimg' + prev_ig_counter.toString());
-                $thisCanvas.hide().css('top', $thisCanvas.height() + 'px').show().animate({top: '0px'}, trans);
-                $prevCanvas.animate({top: '-=' + $prevCanvas.height() + 'px'}, trans, function () {$(this).remove();});
+                if (prev_ig_counter===-1) {
+                    $thisCanvas.hide().css('top', '0px').fadeIn(trans);
+                } else {
+                    $thisCanvas.hide().css('top', $thisCanvas.height() + 'px').show().animate({top: '0px'}, trans);
+                    $prevCanvas.animate({top: '-=' + $prevCanvas.height() + 'px'}, trans, function () {$(this).remove();});
+                }
             };
         };
 

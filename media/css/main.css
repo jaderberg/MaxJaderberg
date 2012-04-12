@@ -1,5 +1,5 @@
 html {
-	background: url(../img/light_wool.png) repeat center center fixed;
+	background: url(../img/dark_wood.png) repeat center center fixed;
 }
 
 img.bg, canvas.bg {
@@ -16,6 +16,8 @@ img.bg, canvas.bg {
 	top: 0;
 	left: 0;
     z-index: -10;
+
+    opacity: 0.6;
 }
 
 @media screen and (max-width: 1024px) { /* Specific to this particular image */
