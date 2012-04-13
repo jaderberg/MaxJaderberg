@@ -1,6 +1,6 @@
 html {
 	background-color: #fff;
-    background: url(../img/struckaxiom.png) repeat center center scroll;
+    background: url(../img/struckaxiom.png) repeat center center fixed;
     height: 100%; width: 100%;
 }
 
@@ -65,6 +65,11 @@ p {
 a{
     text-decoration: none;
     color: #fff;
+    border: none;
+}
+
+img{
+    border: none;
 }
 
 .centered{
@@ -172,11 +177,13 @@ a{
     width: 700px;
     min-width: 700px;
     min-height: 400px;
-    border: 2px #333 solid;
-    background-color: white;
+    /*border: 2px #333 solid;*/
+    background: url(../img/crosses.png) repeat center center scroll;
     text-align: left;
     padding-left: 20px;
     padding-right: 20px;
+    text-shadow: -1px -1px 1px #fff;
+    padding-bottom: 20px;
 }
 
 .content h1{
@@ -185,6 +192,7 @@ a{
     border-bottom: 2px #333 solid;
     letter-spacing: -2px;
     margin-bottom: 40px;
+    padding-top: 20px;
 }
 
 .content p{
@@ -209,7 +217,7 @@ a{
     color:#666666;
     margin:0;
     padding-left: 3em;
-    border-left: 0.5em #EEE solid;
+    border-left: 0.5em #ccc solid;
 }
 
 .content a{
@@ -224,4 +232,40 @@ a{
     -moz-transition: color 0.218s; /* Firefox 4 */
     -webkit-transition: color 0.218s; /* Safari and Chrome */
     -o-transition: color 0.218s; /* Opera */
+}
+
+.stroketext{
+    color: white;
+    text-shadow: -1px -1px 0px #333, 1px 1px 0px #333, 1px -1px 0px #333, -1px 1px 0px #333;
+}
+
+.project{
+    width: 1000px;
+    margin-bottom: 250px;
+    margin-top: 190px;
+}
+
+
+.project .title{
+    width: 200px;
+    font-size: 28px;
+    text-transform: uppercase;
+    letter-spacing: -1px;
+    margin-left: -350px;
+    margin-bottom: -220px;
+    /* Safari */
+    -webkit-transform: rotate(-90deg);
+    /* Firefox */
+    -moz-transform: rotate(-90deg);
+    /* IE */
+    -ms-transform: rotate(-90deg);
+    /* Opera */
+    -o-transform: rotate(-90deg);
+    /* Internet Explorer */
+    filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=3);
+}
+
+.project .project-box{
+    width: 600px;min-width: 600px;min-height: 150px;
+    margin-bottom: 50px;
 }
