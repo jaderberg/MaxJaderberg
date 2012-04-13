@@ -2,11 +2,14 @@
 <html>
 <head>
     <title>Max Jaderberg</title>
-    <link rel="icon" type="image/x-icon" href="/media/img/favicon.ico">
+    <link rel="icon" type="image/png" href="/media/img/favicon.png">
 
     <link type="text/css" rel="stylesheet" href="/media/css/main.css" />
     <link type="text/css" rel="stylesheet" href="/media/css/MyFontsWebfontsKit.css" />
-    <!--[if lt IE 8]>
+    <!--[if lt IE 9]>
+        <link href="/media/css/ie9.css" rel="stylesheet" type="text/css" />
+    <![endif]-->
+    <!--[if IE 9]>
         <link href="/media/css/ie9.css" rel="stylesheet" type="text/css" />
     <![endif]-->
 </head>
@@ -15,10 +18,11 @@
         <a href="/">MAX JADERBERG</a>
     </div>
 
-    <div class="centered nav">
-        <p><a href="/" id="about">ABOUT</a><span>/</span><a href="/" id="projects">PROJECTS</a><span>/</span><a href="/" id="blog">BLOG</a><span>/</span><a href="/" id="findme">FIND ME</a></p>
-    </div>
+    <img id="logo" src="/media/img/logo.png">
 
+    <div class="centered nav">
+        <p><a href="/about/" class="about">ABOUT</a><span>/</span><a href="/" class="projects">PROJECTS</a><span>/</span><a href="/" class="blog">BLOG</a><span>/</span><a href="/" class="findme">FIND ME</a></p>
+    </div>
 
 
     <script src="/media/js/jquery.min.js" type="text/javascript"></script>
