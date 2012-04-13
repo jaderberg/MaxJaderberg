@@ -211,3 +211,17 @@ a{
     padding-left: 3em;
     border-left: 0.5em #EEE solid;
 }
+
+.content a{
+    color: #006299;
+    transition: color 0.218s;
+    -moz-transition: color 0.218s; /* Firefox 4 */
+    -webkit-transition: color 0.218s; /* Safari and Chrome */
+    -o-transition: color 0.218s; /* Opera */
+} .content a:hover{
+    color: #00a2ff;
+    transition: color 0.218s;
+    -moz-transition: color 0.218s; /* Firefox 4 */
+    -webkit-transition: color 0.218s; /* Safari and Chrome */
+    -o-transition: color 0.218s; /* Opera */
+}
