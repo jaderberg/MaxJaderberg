@@ -6,7 +6,6 @@ BLOG_POSTS_DIR = os.path.join(os.path.dirname(__file__), 'blogposts')
 STATIC_FILES_DIR = os.path.join(os.path.dirname(__file__), 'static')
 
 
-def 
 
 application = webapp.WSGIApplication([
                                         ('/.*', MainPage)
