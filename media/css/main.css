@@ -153,19 +153,19 @@ img{
     -o-transition: color 0.218s; /* Opera */
 } .nav a.projects.selected { color: #00a2ff; }
 .nav a.findme:hover{
-    color: #ff4073;
+    color: #ff3877;
     transition: color 0.218s;
     -moz-transition: color 0.218s; /* Firefox 4 */
     -webkit-transition: color 0.218s; /* Safari and Chrome */
     -o-transition: color 0.218s; /* Opera */
-} .nav a.findme.selected { color: #ff4073; }
+} .nav a.findme.selected { color: #ff3877; }
 .nav a.blog:hover{
-    color: #59d91f;
+    color: #6bc400;
     transition: color 0.218s;
     -moz-transition: color 0.218s; /* Firefox 4 */
     -webkit-transition: color 0.218s; /* Safari and Chrome */
     -o-transition: color 0.218s; /* Opera */
-} .nav a.blog.selected { color: #59d91f; }
+} .nav a.blog.selected { color: #6bc400; }
 
 .shadow {
   -moz-box-shadow:    0px 0px 2px 1px #333;
@@ -270,4 +270,34 @@ img{
 .project .project-box{
     width: 600px;min-width: 600px;min-height: 150px;
     margin-bottom: 50px;
+}
+
+a.next-page{
+    margin-left: 50px;
+    transition: color 0.218s;
+    -moz-transition: color 0.218s; /* Firefox 4 */
+    -webkit-transition: color 0.218s; /* Safari and Chrome */
+    -o-transition: color 0.218s; /* Opera */
+}
+
+span.page-arrows{
+    font-size: 25px;
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+a.prev-page{
+    margin-right: 50px;
+    transition: color 0.218s;
+    -moz-transition: color 0.218s; /* Firefox 4 */
+    -webkit-transition: color 0.218s; /* Safari and Chrome */
+    -o-transition: color 0.218s; /* Opera */
+}
+
+a.page-button:hover{
+    color: #6bc400;
+    transition: color 0.218s;
+    -moz-transition: color 0.218s; /* Firefox 4 */
+    -webkit-transition: color 0.218s; /* Safari and Chrome */
+    -o-transition: color 0.218s; /* Opera */
 }
