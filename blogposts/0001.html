@@ -1,2 +1,8 @@
-<h1>My first post</h1>
-<p>This is a test first post</p>
+{% extends "../templates/blog_post.html" %}
+
+{% block title %}My First Blog Post{% endblock %}
+
+{% block blogpost %}
+        <h1><a href="/blog/0001/my-first-blog-post/">My First Blog Post</a></h1>
+        <p>It's awesome!</p>
+{% endblock %}

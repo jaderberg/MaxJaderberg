@@ -20,8 +20,12 @@ handlers:
 
 - url: /blog/?.*
   script: blog.py
- 
-- url: /(.*)/?
+
+- url: /(.*)/
   static_files: static/\1.html
   upload: static/(.*)/
+
+- url: /(.*)
+  static_files: static/\1.html
+  upload: static/(.*)
 

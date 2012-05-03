@@ -194,12 +194,27 @@ img{
     letter-spacing: -2px;
     margin-bottom: 40px;
     padding-top: 20px;
+    font-family: 'Helvetica';
+    font-weight: bold;
+}
+
+.content h1 a{
+    color: #333;
+    transition: color 0.218s;
+    -moz-transition: color 0.218s; /* Firefox 4 */
+    -webkit-transition: color 0.218s; /* Safari and Chrome */
+    -o-transition: color 0.218s; /* Opera */
+} .content h1 a:hover{
+    color: #777;
+    transition: color 0.218s;
+    -moz-transition: color 0.218s; /* Firefox 4 */
+    -webkit-transition: color 0.218s; /* Safari and Chrome */
+    -o-transition: color 0.218s; /* Opera */
 }
 
 .content p{
     margin-top: 10px;
     font-size: 16px;
-    letter-spacing: -1px;
     text-align: justify;
 }
 
@@ -223,13 +238,13 @@ img{
 }
 
 .content a{
-    color: #006299;
+    color: #00a2ff;
     transition: color 0.218s;
     -moz-transition: color 0.218s; /* Firefox 4 */
     -webkit-transition: color 0.218s; /* Safari and Chrome */
     -o-transition: color 0.218s; /* Opera */
 } .content a:hover{
-    color: #00a2ff;
+    color: #38b6ff;
     transition: color 0.218s;
     -moz-transition: color 0.218s; /* Firefox 4 */
     -webkit-transition: color 0.218s; /* Safari and Chrome */

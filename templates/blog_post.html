@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Blog - Max Jaderberg</title>
+    <title>{% block title %}{% endblock %} - Max Jaderberg</title>
     <link rel="icon" type="image/png" href="/media/img/favicon.png">
 
     <link type="text/css" rel="stylesheet" href="/media/css/main.css" />
@@ -23,16 +23,11 @@
 
     <div style="clear: none;height: 50px"></div>
 
-    {% for post in posts %}
-        {{ post.content }}
-    {% endfor %}
 
-    {% if prev_page %}
-        <a class="prev-page page-button stroketext" href="?page={{ prev_page }}"><span class="page-arrows"><<</span> NEWER</a>
-    {% endif %}
-    {% if next_page %}
-        <a class="next-page page-button stroketext" href="?page={{ next_page }}">OLDER <span class="page-arrows">>></span></a>
-    {% endif %}
+    <div id="blogpost" class="content centered shadow">
+        {% block blogpost %}{% endblock %}
+    </div>
+
 
     <div style="clear: none;height: 50px;"></div>
 
