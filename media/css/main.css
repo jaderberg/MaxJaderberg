@@ -106,6 +106,8 @@ img{
 #navlogo{
     height: 80px;
     width: 80px;
+} #navlogo:hover{
+    opacity: 0.8;
 }
 
 #navlist{
@@ -185,6 +187,9 @@ img{
     text-shadow: -1px -1px 1px #fff;
     padding-bottom: 20px;
     margin-bottom: 50px;
+    font-family: Helvetica;
+    letter-spacing: 0px;
+    line-height: 200%;
 }
 
 .content h1{
@@ -194,7 +199,7 @@ img{
     letter-spacing: -2px;
     margin-bottom: 40px;
     padding-top: 20px;
-    font-family: 'Helvetica';
+    padding-bottom: 10px;
     font-weight: bold;
 }
 
@@ -205,17 +210,27 @@ img{
     -webkit-transition: color 0.218s; /* Safari and Chrome */
     -o-transition: color 0.218s; /* Opera */
 } .content h1 a:hover{
-    color: #777;
+    color: #555;
     transition: color 0.218s;
     -moz-transition: color 0.218s; /* Firefox 4 */
     -webkit-transition: color 0.218s; /* Safari and Chrome */
     -o-transition: color 0.218s; /* Opera */
 }
 
+.content .date{
+    padding-top: 0px;
+    margin: -35px 0 20px 0;
+    font-size: 12px;
+    color: #666;
+    font-weight: bolder;
+}
+
 .content p{
     margin-top: 10px;
     font-size: 16px;
     text-align: justify;
+    line-height: 170%;
+    padding-bottom: 10px;
 }
 
 .content img{
@@ -259,7 +274,7 @@ img{
 .project{
     width: 1000px;
     margin-bottom: 250px;
-    margin-top: 190px;
+    margin-top: 240px;
 }
 
 
@@ -269,7 +284,7 @@ img{
     text-transform: uppercase;
     letter-spacing: -1px;
     margin-left: -350px;
-    margin-bottom: -220px;
+    margin-bottom: -280px;
     /* Safari */
     -webkit-transform: rotate(-90deg);
     /* Firefox */
