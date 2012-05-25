@@ -59,7 +59,7 @@ class BlogPost(webapp.RequestHandler):
 application = webapp.WSGIApplication([
                                         ('/blog/?', AllPosts),
                                         ('/blog/([0-9]+)/?.*', BlogPost),
-                                    ], debug=True)
+                                    ], debug=False)
 
 def main():
     run_wsgi_app(application)
