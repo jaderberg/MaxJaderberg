@@ -141,33 +141,33 @@ img{
 }
 
 .nav a.about:hover{
-    color: #ff8340;
+    color: #F7B42C;
     transition: color 0.218s;
     -moz-transition: color 0.218s; /* Firefox 4 */
     -webkit-transition: color 0.218s; /* Safari and Chrome */
     -o-transition: color 0.218s; /* Opera */
-} .nav a.about.selected { color: #ff8340; }
+} .nav a.about.selected { color: #F7B42C; }
 .nav a.projects:hover{
-    color: #00a2ff;
+    color: #4BF;
     transition: color 0.218s;
     -moz-transition: color 0.218s; /* Firefox 4 */
     -webkit-transition: color 0.218s; /* Safari and Chrome */
     -o-transition: color 0.218s; /* Opera */
-} .nav a.projects.selected { color: #00a2ff; }
+} .nav a.projects.selected { color: #4BF; }
 .nav a.findme:hover{
-    color: #ff3877;
+    color: #F27490;
     transition: color 0.218s;
     -moz-transition: color 0.218s; /* Firefox 4 */
     -webkit-transition: color 0.218s; /* Safari and Chrome */
     -o-transition: color 0.218s; /* Opera */
-} .nav a.findme.selected { color: #ff3877; }
+} .nav a.findme.selected { color: #F27490; }
 .nav a.blog:hover{
-    color: #6bc400;
+    color: #AAD450;
     transition: color 0.218s;
     -moz-transition: color 0.218s; /* Firefox 4 */
     -webkit-transition: color 0.218s; /* Safari and Chrome */
     -o-transition: color 0.218s; /* Opera */
-} .nav a.blog.selected { color: #6bc400; }
+} .nav a.blog.selected { color: #AAD450; }
 
 .shadow {
   -moz-box-shadow:    0px 0px 2px 1px #333;
