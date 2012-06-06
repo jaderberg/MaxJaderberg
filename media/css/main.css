@@ -11,16 +11,16 @@ body {
     font-size: 20px;
     text-align: center;
     min-width: 1000px;
-    animation: rotateload 5s;
-    -moz-animation: rotateload 5s; /* Firefox */
-    -webkit-animation: rotateload 5s; /* Safari and Chrome */
+    /*animation: rotateload 5s;*/
+    /*-moz-animation: rotateload 5s; *//* Firefox */
+    /*-webkit-animation: rotateload 5s; *//* Safari and Chrome */
 }
 
 @keyframes rotateload
 {
-from {transform: rotate3d(-1,1,0,-20deg);
-    -webkit-transform: rotate3d(-1,1,0,-20deg); /* Safari and Chrome */
-    -moz-transform: rotate3d(-1,1,0,-20deg); /* Firefox */
+from {transform: rotate3d(-1,1,0,-10deg);
+    -webkit-transform: rotate3d(-1,1,0,-10deg); /* Safari and Chrome */
+    -moz-transform: rotate3d(-1,1,0,-10deg); /* Firefox */
     }
 to {transform: rotate3d(-1,1,0,0deg);
     -webkit-transform: rotate3d(-1,1,0,0deg); /* Safari and Chrome */
@@ -30,9 +30,9 @@ to {transform: rotate3d(-1,1,0,0deg);
 
 @-moz-keyframes rotateload /* Firefox */
 {
-from {transform: rotate3d(-1,1,0,-20deg);
-    -webkit-transform: rotate3d(-1,1,0,-20deg); /* Safari and Chrome */
-    -moz-transform: rotate3d(-1,1,0,-20deg); /* Firefox */
+from {transform: rotate3d(-1,1,0,-10deg);
+    -webkit-transform: rotate3d(-1,1,0,-10deg); /* Safari and Chrome */
+    -moz-transform: rotate3d(-1,1,0,-10deg); /* Firefox */
     }
 to {transform: rotate3d(-1,1,0,0deg);
     -webkit-transform: rotate3d(-1,1,0,0deg); /* Safari and Chrome */
@@ -42,9 +42,9 @@ to {transform: rotate3d(-1,1,0,0deg);
 
 @-webkit-keyframes rotateload /* Safari and Chrome */
 {
-from {transform: rotate3d(-1,1,0,-20deg);
-    -webkit-transform: rotate3d(-1,1,0,-20deg); /* Safari and Chrome */
-    -moz-transform: rotate3d(-1,1,0,-20deg); /* Firefox */
+from {transform: rotate3d(-1,1,0,-10deg);
+    -webkit-transform: rotate3d(-1,1,0,-10deg); /* Safari and Chrome */
+    -moz-transform: rotate3d(-1,1,0,-10deg); /* Firefox */
     }
 to {transform: rotate3d(-1,1,0,0deg);
     -webkit-transform: rotate3d(-1,1,0,0deg); /* Safari and Chrome */
