@@ -202,6 +202,7 @@ img{
     padding-top: 20px;
     padding-bottom: 10px;
     font-weight: bold;
+    font-style: italic;
 }
 
 .content h1 a{
@@ -332,3 +333,103 @@ a.page-button:hover{
     -webkit-transition: color 0.218s; /* Safari and Chrome */
     -o-transition: color 0.218s; /* Opera */
 }
+
+#cv-tagline{
+    font-style: italic;
+    color: #333;
+    text-align: right;
+    font-size: 25px;
+    margin-bottom: 0px;
+    text-transform: uppercase;
+    font-weight: bold;
+    letter-spacing: -2px;
+    padding-top: 15px;
+    padding-bottom: 0px;
+}
+
+.cv-section{
+    margin-top: -10px;
+    font-weight: bold;
+    text-transform: uppercase;
+    background-color: #333333;
+    text-shadow: none;
+    font-style: italic;
+    padding-left: 20px;
+    margin-left: -20px;
+    margin-right: -20px;
+    margin-bottom: 10px;
+    margin-top: 10px;
+    	-webkit-box-shadow: 0 1px 2px #777;
+	-moz-box-shadow: 0 2px 1px #777;
+	box-shadow: 0 2px 1px #777;
+}
+
+.cv-section .line{
+    border-bottom-style: solid;
+    border-bottom-width: 2px;
+    padding-top: 0px;
+    padding-right: 10px;
+    padding-bottom: 0px;
+    margin-left: 20px;
+    position: absolute;
+    margin-top: 20px;
+}
+
+
+/* CV TABLE */
+.cv-section-content table{
+    border-collapse:  separate;
+    border-spacing: 0 20px;
+}
+.cv-section-content table .date-col{
+    width: 60px;
+    font-size: 18px;
+    color: #666;
+    font-weight: bolder;
+    margin: 0px;
+    padding: 0 10px 0 0;
+    vertical-align: top;
+}
+.cv-section-content table .title-col{
+    vertical-align: top;
+    max-width: 300px;
+    min-width: 150px;
+    width: auto;
+    white-space: nowrap;
+}
+.cv-section-content table .title-col .title{
+    font-weight: bold;
+    font-size: 22px;
+    padding: 0 20px 0 0;
+    margin: 0px;
+}
+.cv-section-content table .title-col .subtitle {
+    padding: 0px;
+    font-weight: bold;
+    font-style: normal;
+    color: #333;
+    margin: -5px 0 0 0;
+}
+
+.cv-section-content table .description-col{
+    width: 100%;
+    border-left: #666 solid 4px;
+    padding-left: 20px;
+    font-weight: bold;
+    font-size: 16px;
+    line-height: 1.2em;
+    color: #444;
+}
+.cv-section-content table .description-col p{
+    margin: 0px;
+    padding: 0px;
+    font-weight: bold;
+    color: #444;
+    line-height: 1.2em;
+    padding-bottom: 5px;
+}
+
+.cv-section-content table .description-col ul{
+    margin: 0 0 0 20px; padding: 0px;
+}
+
