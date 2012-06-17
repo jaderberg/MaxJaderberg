@@ -335,7 +335,7 @@ a.page-button:hover{
 }
 
 #cv-tagline{
-    font-style: italic;
+    font-style: normal;
     color: #333;
     text-align: right;
     font-size: 25px;
@@ -433,3 +433,10 @@ a.page-button:hover{
     margin: 0 0 0 20px; padding: 0px;
 }
 
+.cv-section-content .contact-text p{
+    font-weight: bold;
+    font-size: 16px;
+    line-height: 1.2em;
+    color: #444;
+    padding-top: 0px;
+}
