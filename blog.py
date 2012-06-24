@@ -52,7 +52,7 @@ class BlogPost(webapp.RequestHandler):
         if not os.path.exists(blog_post_file):
             self.redirect('/blog/')
 
-        v = {'url': self.request.url}
+        v = {'url': self.request.url, 'show_comments': True}
         self.response.out.write(template.render(blog_post_file, v))
 
 
