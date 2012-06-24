@@ -1,0 +1,57 @@
+{% extends "../templates/blog_post.html" %}
+
+{% block title %}Upgrading to Lion and fixing Python and Virtualenv{% endblock %}
+
+{% block blogpost %}
+        <h1><a href="/blog/0003/osx-lion-python-virtualenv/">Upgrading to OSX Lion and fixing Python and Virtualenv</a></h1>
+        <p class="date">23 June 2012</p>
+        <p>So, after almost a year of sitting on my free version of OSX Lion (since I bought my Mac book pro just before it was released), I finally decided to upgrade. Thank god I did this when I have no work commitments, as it screws over your Python environment.</p>
+        <p><b>UPGRADING TO LION WILL DELETE ALL THE CONTENTS OF YOUR SITE-PACKAGES!</b> It also sets the default Python version to 2.7.</p>
+        <p>If you need to keep your site-packages, I recommend you store them somewhere before you upgrade, or create a requirements.txt file to reinstall them once in Lion.</p>
+        <p>To get Python back up and working, do the following:
+            <ol>
+                <li>Install Xcode 4 for free from the app store.</li>
+                <li>Open Xcode, go into Preferences, then Downloads and install "Command Line Tools".</li>
+                <li>Reinstall everything you need (i.e. <code>sudo easy_install pip</code>, <code>sudo pip install virtualenv</code>).</li>
+            </ol>
+        </p>
+        <p>That should get everything working fine. If you need to go back to Python 2.6, you can find it in <code>/usr/bin/python2.6</code> and for use with virtualenv, just use <code>virtualenv --distribute --python=/usr/bin/python2.6 env</code>.</p>
+        <p>These are the things that worked for me, so hope that avoids others having a similar headache!</p>
+        <p>This in particular solved the problem of getting the following error messages:</p>
+        <pre><code>
+~ > virtualenv env
+New python executable in env/bin/python
+Installing setuptools.............
+  Complete output from command /Users/jaderberg/env/bin/python -c "#!python
+\"\"\"Bootstra...sys.argv[1:])
+" /Library/Python/2.7/...ols-0.6c11-py2.7.egg:
+  Traceback (most recent call last):
+  File "", line 279, in
+  File "", line 207, in main
+  File "/Library/Python/2.7/site-packages/distribute-0.6.27-py2.7.egg/setuptools/__init__.py", line 2, in
+    from setuptools.extension import Extension, Library
+  File "/Library/Python/2.7/site-packages/distribute-0.6.27-py2.7.egg/setuptools/extension.py", line 2, in
+    import distutils.core
+  File "/Users/jaderberg/env/lib/python2.7/distutils/__init__.py", line 16, in
+    exec(open(os.path.join(distutils_path, '__init__.py')).read())
+IOError: [Errno 2] No such file or directory: '/System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/distutils/__init__.py'
+----------------------------------------
+...Installing setuptools...done.
+Traceback (most recent call last):
+  File "/usr/local/bin/virtualenv", line 9, in
+    load_entry_point('virtualenv==1.7.2', 'console_scripts', 'virtualenv')()
+  File "/Library/Python/2.7/site-packages/virtualenv-1.7.2-py2.7.egg/virtualenv.py", line 942, in main
+    never_download=options.never_download)
+  File "/Library/Python/2.7/site-packages/virtualenv-1.7.2-py2.7.egg/virtualenv.py", line 1052, in create_environment
+    search_dirs=search_dirs, never_download=never_download)
+  File "/Library/Python/2.7/site-packages/virtualenv-1.7.2-py2.7.egg/virtualenv.py", line 598, in install_setuptools
+    search_dirs=search_dirs, never_download=never_download)
+  File "/Library/Python/2.7/site-packages/virtualenv-1.7.2-py2.7.egg/virtualenv.py", line 570, in _install_req
+    cwd=cwd)
+  File "/Library/Python/2.7/site-packages/virtualenv-1.7.2-py2.7.egg/virtualenv.py", line 1020, in call_subprocess
+    % (cmd_desc, proc.returncode))
+OSError: Command /Users/jaderberg/env/bin/python -c "#!python
+\"\"\"Bootstra...sys.argv[1:])
+" /Library/Python/2.7/...ols-0.6c11-py2.7.egg failed with error code 1
+        </code></pre>
+{% endblock %}
