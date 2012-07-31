@@ -1,0 +1,35 @@
+{% extends "../templates/blog_post.html" %}
+
+{% block title %}Django: Use Delete Signals Instead Of Overriding Model.delete() method{% endblock %}
+
+{% block blogpost %}
+        <h1><a href="/blog/0005/django-admin-multiple-delete/">Django: Use Delete Signals Instead Of Overriding Model.delete() method</a></h1>
+        <p class="date">31 July 2012</p>
+        <p>In Django, you may encounter a problem when using the admin interface to bulk delete models - it does not trigger the <code>delete()</code> method of the models when they are deleted in bulk. This is because the delete function in the admin interface calls <code>QuerySet.delete()</code> which does not call your model's <code>delete()</code> method (see the warning box on <a href="https://docs.djangoproject.com/en/dev/ref/contrib/admin/actions/" target="_blank">this page</a> of the documentation).</p>
+        <p>This can be undesirable when you have overridden the default <code>Model.delete()</code> method to define some extra behaviour, for example, cleaning up other models.</p>
+        <p>To remedy this, the Django documentation suggests writing a custom admin "action", however this does not help if models are deleted in bulk via foreign key relationships for example. A much better solution is to just not override the <code>Model.delete()</code>, and instead define your extra behaviour using the <code>pre_delete</code> or <code>post_delete</code> model signals.</p>
+        <p>These "signals" are triggered before and after a model is deleted respectively, regardless of how the model is deleted. So instead of something like this:</p>
+        <pre>
+            <code>
+class MyModel(models.Model):
+ ...
+    def delete(self):
+        print "deleting %s" % self
+        ...
+            </code>
+        </pre>
+        <p>where the <code>delete()</code> method is overridden, simply get rid of the method and instead use this:</p>
+        <pre>
+            <code>
+from django.db.models.signals import pre_delete
+from django.dispatch.dispatcher import receiver
+
+@receiver(pre_delete, sender=MyModel)
+def _mymodel_delete(sender, instance, **kwargs):
+    print "deleting %s" % instance
+    ...
+            </code>
+        </pre>
+        <p>It's that simple. Now admin bulk deletes and queryset deletes will still call this custom behaviour.</p>
+
+{% endblock %}
