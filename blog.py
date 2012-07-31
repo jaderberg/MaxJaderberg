@@ -10,6 +10,25 @@ TEMPLATES_DIR = os.path.join(os.path.dirname(__file__), 'templates')
 
 NUM_PER_PAGE = 3
 
+import re
+
+def tryint(s):
+    try:
+        return int(s)
+    except:
+        return s
+
+def alphanum_key(s):
+    """ Turn a string into a list of string and number chunks.
+        "z23a" -> ["z", 23, "a"]
+    """
+    return [ tryint(c) for c in re.split('([0-9]+)', s) ]
+
+def sort_nicely(l):
+    """ Sort the given list in the way that humans expect.
+    """
+    return sorted(l, key=alphanum_key, reverse=True)
+
 class AllPosts(webapp.RequestHandler):
     def get(self):
         blog_template = os.path.join(TEMPLATES_DIR, 'blog.html')
@@ -19,7 +38,7 @@ class AllPosts(webapp.RequestHandler):
 
         start = (page - 1) * NUM_PER_PAGE
         stop = start + NUM_PER_PAGE
-        posts = os.listdir(BLOG_POSTS_DIR)
+        posts = sort_nicely(os.listdir(BLOG_POSTS_DIR))
 
         page_post_files = posts[start:stop]
 
