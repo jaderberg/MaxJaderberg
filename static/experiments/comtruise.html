@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Com Truise</title>
+
+    <link id="favicon" rel="icon" type="image/png" href="" />
+
+    <style>
+        html {
+    height: 100%; width: 100%;
+    background-color: #353535;
+    padding: 0; margin: 0;
+}
+
+body {
+    padding: 0; margin: 0;
+    width: 100%;
+    font-family: "Helvetica neue", Helvetica, sans-serif;
+    min-width: 1200px;
+    color: #353535;
+}
+
+p {
+    margin: 0; -webkit-margin-after: 0;
+}
+
+a {
+    text-decoration: none;
+}
+
+.header {
+    text-align: center;
+    margin: 100px auto 50px;
+    position: absolute;
+    right: 100px;
+}
+
+h1 {
+    margin: 0;
+    padding: 0px 10px 0px 10px;
+    text-transform: uppercase;
+    font-size: 100px;
+    display: inline;
+    background-color: #FF5E43;
+    letter-spacing: -5px;
+}
+
+.colholder {
+    border-top: white solid;
+    width: 100%;
+    height: 100%;
+}
+
+.col {
+    float: left;
+    min-height: 800px;
+    height: 100%;
+    margin: 0px; padding: 0;
+}
+
+.col1 {
+    background-color: rgb(27, 117, 187);
+    width: 18%;
+    color: #fff;
+}
+
+.col2 {
+    background-color: rgb(42, 55, 140);
+    width: 30%;
+    color: rgb(176, 225, 230);
+}
+
+.col3 {
+    background-color: rgb(38, 34, 97);
+    width: 52%;
+    color: #FF5E43;
+}
+
+.col .contents {
+    margin-top: 300px;
+    margin-left: 40px;
+    margin-right: 20px;
+    font-size: 30px;
+    text-align: left;
+    letter-spacing: -0px;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+.col .contents p {
+    margin: 20px 0 20px 0;
+}
+
+.col1 .contents p {
+    margin-left: -15px;
+}
+
+.col2 .contents p {
+    margin-left: 20px;
+}
+
+.col3 .contents p {
+    margin-left: 20px;
+}
+
+.footer {
+    border-top: 4px white solid;
+    height: 50px;
+}
+
+.footer a{
+    padding: 0 2px 1px 2px;
+    background-color: #353535;
+    color: #6e6d6d;
+    font-size: 15px;
+    text-transform: uppercase;
+    font-weight: bold;
+    text-align: right;
+    float: right;
+    margin: 15px 20px 20px 0;
+    transition: color 0.218s;
+    -moz-transition: color 0.218s; /* Firefox 4 */
+    -webkit-transition: color 0.218s; /* Safari and Chrome */
+    -o-transition: color 0.218s; /* Opera */
+    transition: background-color 0.218s;
+    -moz-transition: background-color 0.218s; /* Firefox 4 */
+    -webkit-transition: background-color 0.218s; /* Safari and Chrome */
+    -o-transition: background-color 0.218s; /* Opera */
+} .footer a:hover{
+    background-color: #FF5E43;
+    color: #353535;
+    transition: color 0.218s;
+    -moz-transition: color 0.218s; /* Firefox 4 */
+    -webkit-transition: color 0.218s; /* Safari and Chrome */
+    -o-transition: color 0.218s; /* Opera */
+    transition: background-color 0.218s;
+    -moz-transition: background-color 0.218s; /* Firefox 4 */
+    -webkit-transition: background-color 0.218s; /* Safari and Chrome */
+    -o-transition: background-color 0.218s; /* Opera */
+}
+    </style>
+</head>
+<body>
+
+    <div class="header">
+        <h1>Com Truise.</h1>
+    </div>
+
+    <div class="colholder">
+        <div class="col col1">
+            <div class="contents">
+                <p>Nov.&nbsp;<span style="letter-spacing: -5px; font-weight: normal;">-----</span>&nbsp;&nbsp;23</p>
+                <p>Feb.&nbsp;<span style="letter-spacing: -5px; font-weight: normal;">--------</span>&nbsp;&nbsp;8</p>
+                <p>June&nbsp;<span style="letter-spacing: -5px; font-weight: normal;">------</span>&nbsp;&nbsp;2</p>
+                <p>Nov.&nbsp;<span style="letter-spacing: -5px; font-weight: normal;">-----</span>&nbsp;&nbsp;23</p>
+                <p>Feb.&nbsp;<span style="letter-spacing: -5px; font-weight: normal;">--------</span>&nbsp;&nbsp;8</p>
+                <p>June&nbsp;<span style="letter-spacing: -5px; font-weight: normal;">------</span>&nbsp;&nbsp;2</p>
+            </div>
+        </div>
+
+        <div class="col col2">
+            <div class="contents">
+                <p>Oxford, UK</p>
+                <p>London, UK</p>
+                <p>Paris, FR</p>
+                <p>Oxford, UK</p>
+                <p>London, UK</p>
+                <p>Paris, FR</p>
+            </div>
+        </div>
+
+        <div class="col col3">
+            <div class="contents">
+                <p>Bop @ Worcester College</p>
+                <p>Beat Jam @ XOYO</p>
+                <p>Spicy Cheetah @ Le Manoir</p>
+                <p>Bop @ Worcester College</p>
+                <p>Beat Jam @ XOYO</p>
+                <p>Spicy Cheetah @ Le Manoir</p>
+            </div>
+        </div>
+    </div>
+
+    <div style="clear: both"></div>
+
+    <div class="footer">
+        <a href="http://www.maxjaderberg.com">Max Jaderberg 2012</a>
+    </div>
+
+    <!--Favicon animation-->
+    <script type="text/javascript">
+        (function () {
+            var canvas = document.createElement('canvas'),
+                ctx,
+                link = document.getElementById('favicon'),
+                colours = [
+                    {r: 27, g: 117, b: 187},
+                    {r: 42, g: 55, b: 140},
+                    {r: 38, g: 34, b: 97}
+                ],
+                r = colours[0].r, g = colours[0].g, b = colours[0].b,
+                c = 1,
+                dt = 30,
+                steps = 100,
+                i = 0;
+            
+            if (canvas.getContext) {
+                canvas.height = canvas.width = 16; // set the size
+                ctx = canvas.getContext('2d');
+
+                // colour change animation
+                setInterval(function() {
+                    var cc = colours[c],
+                        dr = (cc.r - r) / steps, dg = (cc.g - g) / steps, db = (cc.b - b) / steps;
+
+                    if (i == steps) {
+                        r = cc.r; g = cc.g; b = cc.b;
+                        c = (c+1) % colours.length;
+                        i = 0;
+                    }
+                    
+                    // draw
+                    ctx.clearRect(0, 0, canvas.width, canvas.height);
+                    ctx.fillStyle = "rgb(" + Math.round(r + (i+1)*dr) + "," + Math.round(g + (i+1)*dg) + "," + Math.round(b + (i+1)*db) + ")";
+//                    ctx.fillRect(0,0,16,16);
+                    //draw a circle
+                    ctx.beginPath();
+                    ctx.arc(i/10, i/10, 8, 0, Math.PI*2, true);
+                    ctx.closePath();
+                    ctx.fill();
+                    link.href = canvas.toDataURL('image/png');
+                    
+                    i = i + 1;
+                }, dt);
+
+            }
+
+        })();
+    </script>
+
+</body>
+</html>
