@@ -1,0 +1,39 @@
+{% extends "../templates/blog_post.html" %}
+
+{% block title %}Talking to MATLAB from Python: Python-MATLAB Bridge{% endblock %}
+
+{% block blogpost %}
+        <h1><a href="/blog/0007/python-matlab-bridge/">Talking to MATLAB from Python: Python-MATLAB Bridge</a></h1>
+        <p class="date">6 September 2012</p>
+        <!--TODO: PUT IN LINKS TO REFERENCES-->
+        <p><b>Python-MATLAB Bridge allows Python to call MATLAB functions <i>without</i> the overhead of starting a new MATLAB process each call.</b></p>
+        <p>For many projects, especially prototyping ones, I use MATLAB to build the processing end of a system. However, I also often want a nice website front end for these, which I build in Python using the Django framework. And here arises the problem: connecting my Python built website to my MATLAB built functions.</p>
+        <p>There are some solutions around to do this: TODO: CITE solutions. You could even use <code>os.system()</code> to start MATLAB from the command prompt with a startup script. Annoying though, all these solutions mean that every time you want to call a MATLAB function you have to start a new instance of MATLAB. This takes forever to do (around 5-10 seconds on my solid state MacBook Pro) and is just a pure waste of time. What if MATLAB was already running and just ran your beautiful .m functions on command? That's what Python-MATLAB Bridge does.</p>
+        <p><i>Disclaimer: Python-MATLAB Bridge is a very early stage project. It has only been tested on OSX and Linux. It does not work on Windows at this time.</i></p>
+        <p>Python-MATLAB Bridge is a Python module that allows you to call MATLAB functions stored anywhere on your local disk and return the result to Python. Crucially, it only requires MATLAB to startup once, after which functions can be called with minimal overhead.</p>
+        <p>Here's how simple it is:</p>
+        <pre>
+            <code>
+## Python
+from pymatbridge import Matlab
+mlab = Matlab(matlab='/Applications/MATLAB_R2011a.app/bin/matlab')
+mlab.start()
+res = mlab.run('/path/to/jk.m', {'arg1': 3, 'arg2', 5})
+print res['result']
+            </code>
+        </pre>
+        <p>can be used to call the following function in <code>/path/to/jk.m</code>:</p>
+        <pre>
+            <code>
+%% MATLAB
+function lol = jk(args)
+    arg1 = args.arg1;
+    arg2 = args.arg2;
+    lol = arg1 + arg2;
+end
+            </code>
+        </pre>
+        <p>Running the Python program will print <code>8</code> as expected. If no further MATLAB calls are needed, <code>mlab.stop()</code> should be run to close the MATLAB process.</p>
+        <p>Arguments for the MATLAB function must be passed as a Python dict, and must be accepted as a single struct object, whose fields will be the key names of the dict.</p>
+        <p>This project is very early stage and was developed for a specific application, so there are plenty of bugs, but it may be helpful to some peaople! Feel free to get in touch for any help.</p>
+{% endblock %}
