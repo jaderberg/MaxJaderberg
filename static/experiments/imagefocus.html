@@ -1,0 +1,146 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+    <title>Image Focus</title>
+
+    <script type="text/javascript" src="/media/js/jquery.min.js"></script>
+    <script type="text/javascript" src="/media/js/spin.js"></script>
+
+    <style>
+html {
+    height: 100%; width: 100%;
+    background-color: #353535;
+    padding: 0; margin: 0;
+}
+
+body {
+    padding: 0; margin: 0;
+    width: 100%;
+    font-family: "Helvetica neue", Helvetica, sans-serif;
+    min-width: 1200px;
+    color: #353535;
+}
+
+p {
+    margin: 0; -webkit-margin-after: 0;
+}
+
+a {
+    text-decoration: none;
+}
+
+#img_holder {
+    height: 500px; width: 750px;
+    display: block;
+    margin-top: 30px;
+    margin-left: auto; margin-right: auto;
+}
+
+.image {
+    cursor: pointer;
+    display: block;
+    height: 500px;
+    position: absolute;
+    -moz-border-radius: 25px;
+    -webkit-border-radius: 25px;
+    border-radius: 25px; /* future proofing */
+    -khtml-border-radius: 25px; /* for old Konqueror browsers */
+    -moz-box-shadow:    0px 0px 0px 4px white;
+    -webkit-box-shadow: 0px 0px 0px 4px white;
+    box-shadow:         0px 0px 0px 4px white;
+}
+
+
+h1 {
+    margin: 0;
+    background-color: #FF5E43;
+    color: #353535;
+    text-align: center;
+    padding: 10px 0 10px 0;
+}
+
+#spinner {
+    display: block;
+    margin-left: auto; margin-right: auto;
+    margin-top: 300px;
+    margin-bottom: 230px;
+}
+
+.footer {
+    margin-top: 50px;
+    height: 30px;
+}
+
+.footer a{
+    padding: 0 2px 1px 2px;
+    background-color: #353535;
+    color: #6e6d6d;
+    font-size: 15px;
+    text-transform: uppercase;
+    font-weight: bold;
+    text-align: right;
+    float: right;
+    margin: 15px 20px 20px 0;
+} .footer a:hover{
+    background-color: #FF5E43;
+    color: #353535;
+}
+        
+    </style>
+
+    <script type="text/javascript">
+        $(function() {
+            var spinner = new Spinner({
+                    color: '#fff'
+                }).spin($('#spinner')[0]);
+
+            var $im_out = $('#image_out'),
+                $im_in = $('#image_in'),
+                im_out_loaded = false,
+                $img = $('.image'),
+                speed = 400;
+            $im_out.load(function() {
+                im_out_loaded = true;
+            });
+            $im_in.load(function() {
+                var i = setInterval(function() {
+                    if (im_out_loaded) {
+                        clearInterval(i);
+                        $('#spinner').hide();
+                        $('#img_holder').show();
+                        var im_out_f = function() {
+                                $im_out.fadeOut(speed);
+                                $im_in.fadeIn(speed);
+                                $im_out.unbind('mouseenter');
+                                $im_in.bind('mouseleave', im_in_f);
+                            },
+                            im_in_f = function() {
+                                $im_out.fadeIn(speed);
+                                $im_in.fadeOut(speed);
+                                $im_in.unbind('mouseleave');
+                                $im_out.bind('mouseenter', im_out_f);
+                            };
+                        $im_out.bind('mouseover', im_out_f);
+                    }
+                }, 50);
+            });
+        });
+    </script>
+</head>
+<body>
+    <h1>HOVER OVER IMAGE</h1>
+
+    <div id="spinner"></div>
+
+    <div id="img_holder" style="display: none;">
+        <img id="image_out" class="image" src="/media/img/imagefocus/out.jpg">
+        <img id="image_in" class="image" src="/media/img/imagefocus/in.jpg" style="display: none;" >
+    </div>
+
+    <div class="footer">
+        <a href="http://www.maxjaderberg.com">Max Jaderberg 2012</a>
+    </div>
+
+</body>
+</html>
