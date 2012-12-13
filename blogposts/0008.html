@@ -5,5 +5,12 @@
 {% block blogpost %}
         <h1><a href="/blog/0008/adding-bash_profile-to-matlab-environment/">Adding Your .bash_profile To Matlab's Bash Environment</a></h1>
         <p class="date">28 November 2012</p>
-        <p>If you have your own .bash_profile</p>
+        <p>When calling <code>system()</code> in Matlab, you probably want all your aliases and environment variables available to Matlab. If you didn't know, <code>system()</code> allows you to call shell commands from Matlab code as if you were in a terminal - e.g. <code>s = evalc('system(''ls -l | wc -l'')')</code> will return a string of the number of files in the current directory.</p>
+        <p>However, Matlab has its own bash profile so anything you have defined in your <code>~/.bash_profile</code> (or similar) file will not work when calling <code>system()</code> in Matlab.</p>
+        <p>The solution is to import your current bash profile in to Matlab by adding the following line to your <code>startup.m</code> file:</p>
+<pre><code>
+setenv('BASH_ENV','~/.bash_profile');
+
+</code></pre>
+        <p>You can edit your startup file by typing <code>edit startup</code> at the Matlab prompt. And that's it - now you have all your environment variables and definitions from your bash profile available to Matlab.</p>
 {% endblock %}
